@@ -5,31 +5,35 @@
     <title></title>
   </head>
   <body>
-      <form>
+      <form method="POST">
 
         <p>
-            <label for="">Nombre</label>
-            <input type="text" name="first_name" required>
+            <label for="first_name">Nombre:</label>
+            <input type="text" name="first_name" id="first_name" required>
         </p>
 
         <p>
-            <label for="">Apellidos</label>
-            <input type="text" name="last_name" value="">
+            <label for="last_name">Apellidos:</label>
+            <input type="text" name="last_name" id="last_name">
         </p>
 
         <p>
-            <label for="">Sexo</label>
-            <input type="radio" name="gender" >Femenino
-            <input type="radio" name="gender" >Masculino
+            <label for="">Sexo:</label>
+            <input type="radio" name="gender" value="f" id="femenino">
+            <label for="femenino">Femenino</label>
+            <input type="radio" name="gender" value="m" id="masculino">
+            <label for="masculino">Masculino</label>
         </p>
+
         <p>
-            <label for="">Intereses</label>
-            <input type="checkbox" name="interests" >Tecnologia
-            <input type="checkbox" name="interests" >Deportes
-            <input type="checkbox" name="interests" >Desarrollo
-
+            <label for="">Intereses:</label>
+            <label for="tecnologia">Tecnologia</label>
+            <input type="checkbox" name="interests" value="tec" id="tecnologia">
+            <label for="deportes">Deportes</label>
+            <input type="checkbox" name="interests" value="sport" id="deportes">
+            <label for="desarrollo">Desarrollo</label>
+            <input type="checkbox" name="interests" value="dec" id="desarrollo">
         </p>
-
 
           <input type="submit"  value="Registrar">
 

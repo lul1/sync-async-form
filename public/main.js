@@ -3,39 +3,55 @@ $(document).ready(function(){
     $('input[type="submit"]').on("click",function(event){
         event.preventDefault();
 
-        var first_name = $('#first_name').val();
-        var last_name = $('#last_name').val();
-        var femenino = $('#femenino').val();
-        var masculino = $('#masculino').val();
+        var first_name = $('#first_name').val(); //first_name
+        var last_name = $('#last_name').val(); //last_name
         var gender = $('input[name="gender"]:checked').val();
+        var interest = $('input[name="interest"]:checked');
+        var interests = new Array();
 
+        for (var i = 0; i < interest.length; i++) {
+          var temp_interest = interest[i];
+          interests.push(temp_interest.value);
+        }
 
+        var payload = {
+          'first_name':first_name,
+          'last_name':last_name,
+          'gender':gender,
+          "interests": interests
+        }
 
-
-
-
-
-
-
-
-        $.get('find.html',{'first_name':first_name});
-        $.post('find.html',{'first_name':first_name});
-        $.get('find.html',{'last_name':last_name});
-        $.post('find.html',{'last_name':last_name});
-        $.post('find.html',{'gender':gender});
-
-
-       
-
-
+        $.post('find.html', payload);
 
 
     });
 });
+
+
+
+/*$.get('find.html',{'last_name':last_name});
+$.post('find.html',{'last_name':last_name});
+$.post('find.html',{'gender':gender});
  /*$.get('find.html',{'femenino':femenino});
         $.post('find.html',{'femenino':femenino});
         $.get('find.html',{'masculino':,masculino});
         $.post('find.html',{'masculino':masculino});/*
+
+        var payload = {
+          'first_name':first_name,
+          'last_name':last_name,
+          'gender':gender,
+          'interests': interests.map(function(i, element){
+              return $(element).val();
+          })
+        };
+
+
+
+
+
+        $.get('find.html', payload);
+        $.post('find.html', payload);
 
 
 /*  console.log("Hiciste click!", $('#first_name').val());
@@ -44,7 +60,7 @@ $(document).ready(function(){
   console.log("Hiciste click!", $('input[name="interests"]:checked').val());*/
 /*var first_name = $('input[name="first_name"]').val();
 
-String RdioValues= request.getParameter("gender");
+String RadioValues= request.getParameter("gender");
 String checkboxValues = request.getParameter("Intereses");
 
 console.log(first_name);

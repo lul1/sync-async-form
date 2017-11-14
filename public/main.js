@@ -7,7 +7,7 @@ $(document).ready(function(){
         var last_name = $('#last_name').val();
         var femenino = $('#femenino').val();
         var masculino = $('#masculino').val();
-
+        var gender = $('input[name="gender"]:checked').val();
 
 
 
@@ -22,17 +22,20 @@ $(document).ready(function(){
         $.post('find.html',{'first_name':first_name});
         $.get('find.html',{'last_name':last_name});
         $.post('find.html',{'last_name':last_name});
-        $.get('find.html',{'femenino':femenino});
-        $.post('find.html',{'femenino':femenino});
-        $.get('find.html',{'masculino':,masculino});
-        $.post('find.html',{'masculino':masculino});
+        $.post('find.html',{'gender':gender});
 
+
+       
 
 
 
 
     });
 });
+ /*$.get('find.html',{'femenino':femenino});
+        $.post('find.html',{'femenino':femenino});
+        $.get('find.html',{'masculino':,masculino});
+        $.post('find.html',{'masculino':masculino});/*
 
 
 /*  console.log("Hiciste click!", $('#first_name').val());
